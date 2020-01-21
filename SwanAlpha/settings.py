@@ -30,7 +30,12 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+
+
 INSTALLED_APPS = [
+    # Make Sure You Add Application Config
+    'swanalpha.apps.SwanalphaConfig',
+    # swanalpha - apps - SwanalphaConfig
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -117,4 +122,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+# STATIC URL FOR JAVASCRIPTS AND OTHER
 STATIC_URL = '/static/'
+
+#path from the home + this folder directory
+TEMPLATE_DIRS = (
+                    os.path.join(os.path.dirname(__file__),'templates'),
+)
+#path from the home + this folder directory
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,)
+]
+#path from the home + this folder directory
+STATIC_ROOT = os.path.join(BASE_DIR,'assets')
+
+#path from the home + this folder directory
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
